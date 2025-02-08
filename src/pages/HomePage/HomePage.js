@@ -14,7 +14,7 @@ function HomePage({user}) {
     const [artists, setArtists] = useState(undefined);
 
     const queryCountryMusic = async (country) => {
-      const music = await fetch(`http://localhost:5005/search?country=${country}`).then((response) => response.json())
+      const music = await fetch(`${process.env.API_URL}/search?country=${country}`).then((response) => response.json())
       return setArtists(music);
     }
     
